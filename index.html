@@ -1,4 +1,195 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 主容器：使用flex布局实现左右布局 */
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+        }
+
+        /* 左侧：照片区域 */
+        .profile-section {
+            flex: 0 0 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .profile-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-img {
+            width: 280px; /* 照片尺寸增大 */
+            height: 280px;
+            border-radius: 50%;
+            border: 5px solid #4a90e2;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+            border-color: #2c6eaa;
+        }
+
+        /* 右侧：文字内容区域 */
+        .content-section {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .content-section:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+            text-align: left;
+        }
+
+        .subtitle {
+            color: #4a90e2;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+            text-align: left;
+            color: #555;
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-info h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .contact-link:hover {
+            background: #2c6eaa;
+            transform: translateY(-2px);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .profile-section {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .content-section {
+                flex: 1;
+            }
+            
+            .profile-img {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧：个人照片 -->
+        <div class="profile-section">
+            <img src="profile.jpg" alt="John Doe - 软件工程师" class="profile-img">
+            <h2>John Doe</h2>
+            <p class="subtitle">软件工程师 | 人工智能专家</p>
+        </div>
+        
+        <!-- 右侧：个人简介 -->
+        <div class="content-section">
+            <h1>Hi, I'm John Doe</h1>
+            <p>我是一名经验丰富的软件工程师，专注于人工智能和机器学习领域。拥有5年行业经验，曾在多家科技公司担任核心开发角色。</p>
+            
+            <p>我擅长构建高性能、可扩展的系统，特别在深度学习和自然语言处理方面有深入研究。我的工作理念是：技术应该让世界变得更美好。</p>
+            
+            <p>在业余时间，我喜欢阅读科技书籍、参加技术社区活动，以及探索新的编程语言和框架。</p>
+            
+            <div class="contact-info">
+                <h3>联系方式</h3>
+                <div class="contact-links">
+                    <a href="mailto:john.doe@example.com" class="contact-link">邮箱</a>
+                    <a href="https://github.com/johndoe" class="contact-link">GitHub</a>
+                    <a href="https://linkedin.com/in/johndoe" class="contact-link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
 <html>
 <head>
     <title>Welcome to Andy Chan's personal homepage!</title>
