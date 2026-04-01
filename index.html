@@ -12,20 +12,19 @@
             box-sizing: border-box;
         }
 
-        /* 深绿色背景 */
+        /* 统一的淡绿色背景 */
         body {
             font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #c8e6c9 0%, #e3f2fd 100%);
-            background-attachment: fixed;
+            background-color: #e8f5e9; /* 统一的淡绿色背景 */
             padding: 20px;
             min-height: 100vh;
             position: relative;
         }
 
-        /* 装饰性背景元素 */
-        .background-decoration {
+        /* 简化的背景花朵装饰 */
+        .background-flowers {
             position: fixed;
             top: 0;
             left: 0;
@@ -36,87 +35,38 @@
             overflow: hidden;
         }
 
-        /* 花朵 */
+        /* 花朵样式 - 简化版 */
         .flower {
             position: absolute;
-            opacity: 0.4;
-            animation: float 15s infinite ease-in-out;
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
         }
 
-        .flower-1 { top: 10%; left: 15%; width: 80px; height: 80px; animation-delay: 0s; }
-        .flower-2 { top: 25%; right: 10%; width: 60px; height: 60px; animation-delay: 2s; }
-        .flower-3 { bottom: 15%; left: 20%; width: 70px; height: 70px; animation-delay: 4s; }
-        .flower-4 { bottom: 25%; right: 15%; width: 90px; height: 90px; animation-delay: 6s; }
-        .flower-5 { top: 40%; left: 30%; width: 50px; height: 50px; animation-delay: 8s; }
-        .flower-6 { bottom: 40%; right: 30%; width: 65px; height: 65px; animation-delay: 10s; }
+        .flower-1 { top: 12%; left: 15%; width: 60px; height: 60px; animation-delay: 0s; }
+        .flower-2 { top: 20%; right: 12%; width: 50px; height: 50px; animation-delay: 3s; }
+        .flower-3 { bottom: 25%; left: 18%; width: 45px; height: 45px; animation-delay: 6s; }
+        .flower-4 { bottom: 18%; right: 15%; width: 55px; height: 55px; animation-delay: 9s; }
+        .flower-5 { top: 35%; left: 25%; width: 40px; height: 40px; animation-delay: 12s; }
 
-        .flower::before, .flower::after {
+        .flower::before {
             content: "";
             position: absolute;
             width: 100%;
             height: 100%;
-            border-radius: 50%;
-        }
-
-        .flower::before {
             background: radial-gradient(circle, #e91e63 0%, #c2185b 70%);
+            border-radius: 50%;
             transform: rotate(45deg);
         }
 
         .flower::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
             background: radial-gradient(circle, #e91e63 0%, #c2185b 70%);
+            border-radius: 50%;
             transform: rotate(-45deg);
         }
-
-        /* 草 */
-        .grass {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 150px;
-            background: linear-gradient(to top, #4caf50 0%, transparent 100%);
-            z-index: -1;
-        }
-
-        .grass-blade {
-            position: absolute;
-            bottom: 0;
-            width: 3px;
-            height: 30px;
-            background: #4caf50;
-            border-radius: 50% 50% 0 0;
-            transform-origin: bottom;
-        }
-
-        /* 树木 */
-        .tree {
-            position: absolute;
-            bottom: 150px;
-            z-index: -1;
-        }
-
-        .tree-trunk {
-            position: absolute;
-            bottom: 0;
-            width: 15px;
-            height: 50px;
-            background: #8d6e63;
-            border-radius: 2px;
-        }
-
-        .tree-leaves {
-            position: absolute;
-            bottom: 40px;
-            width: 60px;
-            height: 80px;
-            background: #4caf50;
-            border-radius: 50% 50% 50% 50%;
-            box-shadow: 0 -10px 20px rgba(76, 175, 80, 0.4);
-        }
-
-        .tree-1 { left: 5%; bottom: 130px; transform: scale(0.8); }
-        .tree-2 { right: 8%; bottom: 140px; transform: scale(0.6); }
-        .tree-3 { left: 85%; bottom: 120px; transform: scale(0.7); }
 
         /* 主容器 */
         .container {
@@ -655,54 +605,19 @@
         /* 花朵动画 */
         @keyframes float {
             0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
-            50% { transform: translateY(-20px) rotate(5deg); opacity: 0.6; }
+            50% { transform: translateY(-15px) rotate(3deg); opacity: 0.5; }
             100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
-        }
-
-        /* 草叶动画 */
-        @keyframes sway {
-            0% { transform: rotate(0deg); }
-            50% { transform: rotate(5deg); }
-            100% { transform: rotate(0deg); }
         }
     </style>
 </head>
 <body>
-    <!-- 背景装饰元素 -->
-    <div class="background-decoration">
-        <!-- 草地 -->
-        <div class="grass">
-            <div class="grass-blade" style="left: 15%; animation: sway 3s infinite;"></div>
-            <div class="grass-blade" style="left: 25%; animation: sway 4s infinite 0.5s;"></div>
-            <div class="grass-blade" style="left: 35%; animation: sway 3.5s infinite 1s;"></div>
-            <div class="grass-blade" style="left: 45%; animation: sway 4.5s infinite 1.5s;"></div>
-            <div class="grass-blade" style="left: 55%; animation: sway 3s infinite 2s;"></div>
-            <div class="grass-blade" style="left: 65%; animation: sway 4s infinite 2.5s;"></div>
-            <div class="grass-blade" style="left: 75%; animation: sway 3.5s infinite 3s;"></div>
-            <div class="grass-blade" style="left: 85%; animation: sway 4.5s infinite 3.5s;"></div>
-        </div>
-        
-        <!-- 树木 -->
-        <div class="tree tree-1">
-            <div class="tree-trunk"></div>
-            <div class="tree-leaves"></div>
-        </div>
-        <div class="tree tree-2">
-            <div class="tree-trunk"></div>
-            <div class="tree-leaves"></div>
-        </div>
-        <div class="tree tree-3">
-            <div class="tree-trunk"></div>
-            <div class="tree-leaves"></div>
-        </div>
-        
-        <!-- 花朵 -->
+    <!-- 简化的背景花朵装饰 -->
+    <div class="background-flowers">
         <div class="flower flower-1"></div>
         <div class="flower flower-2"></div>
         <div class="flower flower-3"></div>
         <div class="flower flower-4"></div>
         <div class="flower flower-5"></div>
-        <div class="flower flower-6"></div>
     </div>
 
     <div class="container">
