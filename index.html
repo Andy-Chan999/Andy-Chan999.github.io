@@ -521,6 +521,34 @@
             text-decoration: underline;
         }
 
+        /* 自拍照片板块 */
+        .selfie-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .selfie-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 3/4;
+        }
+
+        .selfie-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .selfie-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         /* 个人爱好 */
         .hobbies-container {
             display: grid;
@@ -569,7 +597,7 @@
                 max-width: 350px;
             }
             
-            .research-interests, .hobbies-container {
+            .research-interests, .hobbies-container, .selfie-gallery {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
         }
@@ -597,7 +625,7 @@
                 font-size: 2rem;
             }
             
-            .research-interests, .hobbies-container {
+            .research-interests, .hobbies-container, .selfie-gallery {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
         }
@@ -644,6 +672,7 @@
                     <a href="https://x.com/yhl198925589" class="contact-link"><i class="fab fa-twitter"></i> Twitter</a>
                     <a href="https://www.instagram.com/andynju1999/" class="contact-link"><i class="fab fa-instagram"></i> Instagram</a>
                     <a href="https://discord.com/channels/@me" class="contact-link"><i class="fab fa-discord"></i> Discord</a>
+                    <a href="https://github.com/Andy-Chan999" class="contact-link"><i class="fab fa-github"></i> Github</a>
                     <a href="https://scholar.google.com/citations?user=uImCHfUAAAAJ&hl=zh-CN&oi=sra" class="contact-link"><i class="fab fa-google-scholar"></i> Google Scholar</a>
                     <a href="www.linkedin.com/in/岸荻-陳-943aa2290" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 </div>
@@ -822,6 +851,39 @@
                     <div class="hobby-name">Cooking</div>
                 </div>
             </div>
+        </div>
+
+        <!-- 新增：自拍照片板块 -->
+        <div class="section-card">
+            <h2 class="section-title">Selfie Photos</h2>
+            <div class="selfie-gallery">
+                <div class="selfie-item">
+                    <img src="me2.jpg" alt="Selfie photo 2" class="selfie-img">
+                </div>
+                <div class="selfie-item">
+                    <img src="me3.jpg" alt="Selfie photo 3" class="selfie-img">
+                </div>
+                <div class="selfie-item">
+                    <img src="me4.jpg" alt="Selfie photo 4" class="selfie-img">
+                </div>
+                <div class="selfie-item">
+                    <img src="me5.jpg" alt="Selfie photo 5" class="selfie-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- 新增：对未来批判性思考板块 -->
+        <div class="section-card">
+            <h2 class="section-title">Critical Thinking to the Future</h2>
+            <p style="margin-top: 20px; font-size: 1.15rem; line-height: 1.7;">
+                As we stand at the crossroads of technological advancement and human evolution, critical thinking becomes more essential than ever. The rapid development of artificial intelligence, quantum computing, and biotechnology presents both unprecedented opportunities and complex challenges.
+            </p>
+            <p style="margin-top: 20px; font-size: 1.15rem; line-height: 1.7;">
+                I believe that the future belongs to those who can think critically about the implications of emerging technologies while maintaining a human-centered approach. We must ask not only "can we build it?" but also "should we build it?" and "how will it impact society?"
+            </p>
+            <p style="margin-top: 20px; font-size: 1.15rem; line-height: 1.7;">
+                My vision for the future involves creating AI systems that augment human capabilities rather than replace them, developing sustainable technologies that address climate change, and fostering global collaboration to solve humanity's greatest challenges. Critical thinking is the foundation upon which we can build a better future for all.
+            </p>
         </div>
     </div>
 </body>
